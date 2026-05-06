@@ -35,19 +35,26 @@ int main() {
         return 0;
     }
 
-    //Tempo de recarga estimado, Potência do carregador: 75kW  
-    temp_recarga = (energia_necessaria / 75) * 60;
-
+    //Verificando se o valor da capacidade da bateria é válido
+    if (capacidade_bateria <= 0)
+    {
+    printf("Capacidade invalida!\n");
+    return 0;
+    }
 
     //Cálculo do total de energia consumida
     energia_necessaria = capacidade_bateria - conversao_para_kwh(bateria_inicial, capacidade_bateria);
 
-    //Cálculo da cobrança do carregamento, preço médio do Kwh em SP é R$0,80
+    //Tempo de recarga estimado, Potência do carregador: 75kW  
+    temp_recarga = (energia_necessaria / 75) * 60;
+
+
+    //Cálculo da cobrança do carregamento, preço médio do KWh em SP é R$0,80
     total_pagar = energia_necessaria * 0.8;
     
     //Carregamento da bateria
     bateria_final = bateria_inicial;
-    while (bateria_final <100)
+    while (bateria_final < 100)
     {
         bateria_final ++;
     }
@@ -57,10 +64,10 @@ int main() {
     printf("             Relatorio Da Sessao\n");
     printf("Carga inicial da bateria: %.2f%%\n", bateria_inicial);
     printf("Carga atual da bateria: %.0f%%\n", bateria_final);
-    printf("Carga adicionada: %.2f kwh\n", energia_necessaria);
+    printf("Carga adicionada: %.2f kWh\n", energia_necessaria);
     printf("Preco da recarga: R$%.2f\n", total_pagar);
     printf("Tempo de recarga estimado: %.0f min\n", temp_recarga);
-    printf("             Sessao finalizada!\n");
+    printf("              Sessao finalizada\n");
     printf("=============================================");
     
     return 0;
