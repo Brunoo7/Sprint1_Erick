@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 //Função para converter a porcentagem da bateria em kwh
 float conversao_para_kwh(float bateria_inicial, float capacidade_bateria) {
@@ -16,17 +17,33 @@ int main() {
     float energia_necessaria;
     float capacidade_bateria;
     float temp_recarga;
+    int opcao;
 
     //Formatação de entrada
     printf("=================================\n");
     printf("        Estacao De Recarga\n");
-    printf("         Sessao iniciada\n");
-    printf("Conecte O Carregador Ao Seu Carro\n");
-    printf("Digite a capacidade da bateria do seu carro: ");
-    scanf("%f", &capacidade_bateria);
-    printf("Digite a porcentagem da bateria do seu carro: ");
-    scanf("%f", &bateria_inicial);
-    printf("=================================\n");
+    printf("1 - Iniciar recarga - 2 - Sair: ");
+    scanf("%d", &opcao);
+    if (opcao == 1)
+    {
+        printf("=================================\n");
+        printf("         Sessao iniciada\n");
+        printf("Conecte O Carregador Ao Seu Carro\n");
+        printf("Digite a capacidade da bateria do seu carro: ");
+        scanf("%f", &capacidade_bateria);
+        printf("Digite a porcentagem da bateria do seu carro: ");
+        scanf("%f", &bateria_inicial);
+        printf("=================================\n");
+
+    }else if (opcao == 2)
+    {
+        exit(0);
+    }
+    else
+    {
+        printf("Valor invalido\n");
+        return 0;
+    }
 
     //Verificando se o valor da portcentagem da bateria é válido
     if (bateria_inicial < 0 ||  bateria_inicial > 100)
