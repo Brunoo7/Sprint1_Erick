@@ -22,11 +22,11 @@ int main() {
     printf("        Estacao De Recarga\n");
     printf("         Sessao iniciada\n");
     printf("Conecte O Carregador Ao Seu Carro\n");
-    printf("=================================\n");
     printf("Digite a capacidade da bateria do seu carro: ");
     scanf("%f", &capacidade_bateria);
     printf("Digite a porcentagem da bateria do seu carro: ");
     scanf("%f", &bateria_inicial);
+    printf("=================================\n");
 
     //Verificando se o valor da portcentagem da bateria é válido
     if (bateria_inicial < 0 ||  bateria_inicial > 100)
