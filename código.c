@@ -17,7 +17,7 @@ int main() {
     float capacidade_bateria;
     float temp_recarga;
 
-    //Menu
+    //Formatação de entrada
     printf("=================================\n");
     printf("        Estacao De Recarga\n");
     printf("         Sessao iniciada\n");
