@@ -20,6 +20,7 @@ int main() {
     //Menu
     printf("=================================\n");
     printf("        Estacao De Recarga\n");
+    printf("         Sessao iniciada\n");
     printf("Conecte O Carregador Ao Seu Carro\n");
     printf("=================================\n");
     printf("Digite a capacidade da bateria do seu carro: ");
@@ -35,7 +36,7 @@ int main() {
     }
 
     //Tempo de recarga estimado, Potência do carregador: 75kW  
-    temp_recarga = capacidade_bateria / 75;
+    temp_recarga = (energia_necessaria / 75) * 60;
 
 
     //Cálculo do total de energia consumida
@@ -59,6 +60,7 @@ int main() {
     printf("Carga adicionada: %.2f kwh\n", energia_necessaria);
     printf("Preco da recarga: R$%.2f\n", total_pagar);
     printf("Tempo de recarga estimado: %.0f min\n", temp_recarga);
+    printf("             Sessao finalizada!\n");
     printf("=============================================");
     
     return 0;
